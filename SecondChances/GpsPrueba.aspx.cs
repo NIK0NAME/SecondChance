@@ -23,6 +23,12 @@ namespace SecondChances
                 Response.Write("-+");
             }
         }
+
+        //Otra funcion creada pero ya en la rama master con el merge de features
+        public void noMana()
+        {
+
+        }
     }
 
 }
