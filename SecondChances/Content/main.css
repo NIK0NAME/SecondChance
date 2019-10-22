@@ -1,0 +1,36 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+.main-container {
+    max-width: 1100px;
+    min-width: 320px;
+    margin: 0 auto;
+    background: #2C3E50;
+    min-height: 100vh;
+    padding: 20px 10px;
+}
+
+.beatifull-table {
+    color: #fff;
+    margin: 0px auto;
+}
+
+.beatifull-table td, .beatifull-table th {
+    border: 1px solid #D7DBDD;
+    padding: 10px 20px;
+}
+
+.beatifull-table th {
+    color: #2ECC71;
+    text-transform: capitalize;
+}
+
+tr:nth-child(even) {
+    background-color: #ccc;
+    color: #2C3E50;
+}
