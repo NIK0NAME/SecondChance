@@ -11,10 +11,18 @@ namespace SecondChances
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var london = new Savage.GPS.Position(-0.1, 51.52);
-            var sanFrancisco = new Savage.GPS.Position(-122.45, 37.77);
+            
+        }
 
-            var distance = london.DistanceFrom(sanFrancisco);
+        //Hace magia pura cuando se le llama a esta funcion
+        public void magia()
+        {
+            var cont = 0;
+            for(cont = 0; cont < 25; cont++)
+            {
+                Response.Write("-+");
+            }
         }
     }
+
 }
