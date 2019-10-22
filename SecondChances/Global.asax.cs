@@ -16,6 +16,7 @@ namespace SecondChances
             // Código que se ejecuta al iniciar la aplicación
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //WE ARE THE CODE
         }
     }
 }
