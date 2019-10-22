@@ -17,6 +17,8 @@ namespace SecondChances
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             //WE ARE THE CODE
+
+            //Otro comentario, aver como se comporta el IDE de Visual Studio
         }
     }
 }
