@@ -13,6 +13,15 @@ namespace SecondChances {
     public partial class SiteMaster {
         
         /// <summary>
+        /// Control alert_placer.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert_placer;
+        
+        /// <summary>
         /// Control MainContent.
         /// </summary>
         /// <remarks>

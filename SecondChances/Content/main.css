@@ -59,8 +59,65 @@ tr:nth-child(even) {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 20px 40px;
+    padding: 20px 60px;
     background: #fff;
     color: #333;
     box-shadow: -4px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.form_data {
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.form_row {
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.form_col {
+    display: grid;
+    grid-row-gap: 5px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 100%;
+    margin-bottom: 10px;
+}
+
+.form_col > span{
+    font-weight: 900;
+}
+
+.form_col > input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    width: 100%;
+}
+
+.button_signin {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+    .button_signin > input {
+        border-radius: 3px;
+        padding: 10px 40px;
+        background: #FE6936;
+        color: #fff;
+        font-weight: 900;
+        border: none;
+    }
+
+.ma_alert {
+    position: absolute;
+    top: 20px;
+    width: calc(100% - 20px);
+    left: 10px;
+    padding: 20px;
+    border-radius: 4px;
+    background: #2C3E50;
+    color: #fff;
+    font-weight: 900;
 }

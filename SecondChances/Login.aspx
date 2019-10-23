@@ -15,12 +15,14 @@
 
             </div>
             <div class="login_content">
-                <h1><img src="https://image.flaticon.com/icons/svg/1727/1727763.svg" width="50"/><br />Login to get some trash</h1>
-                <div>
-                    <asp:TextBox ID="username" runat="server"></asp:TextBox>
-                    <asp:TextBox ID="pass" runat="server"></asp:TextBox>
-                </div>
-                <asp:Button ID="Button1" runat="server" Text="Make it real" />
+               <div >
+                    <h1 style="text-align: center;"><img src="https://image.flaticon.com/icons/svg/1727/1727763.svg" width="50"/><br />Login to get some trash</h1>
+                    <div>
+                        <asp:TextBox ID="username" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="pass" runat="server"></asp:TextBox>
+                    </div>
+                    <asp:Button ID="Button1" runat="server" Text="Make it real" />
+               </div>
             </div>
         </div>
     </form>
