@@ -11,6 +11,17 @@
 <body>
     <form id="form1" runat="server">
         <div class="main_content">
+            <div class="left_ilustration">
+
+            </div>
+            <div class="login_content">
+                <h1><img src="https://image.flaticon.com/icons/svg/1727/1727763.svg" width="50"/><br />Login to get some trash</h1>
+                <div>
+                    <asp:TextBox ID="username" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="pass" runat="server"></asp:TextBox>
+                </div>
+                <asp:Button ID="Button1" runat="server" Text="Make it real" />
+            </div>
         </div>
     </form>
 </body>

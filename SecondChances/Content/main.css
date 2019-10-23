@@ -4,6 +4,7 @@
 
 body {
     margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main-container {
@@ -37,6 +38,29 @@ tr:nth-child(even) {
 
 .main_content {
     width: 100%; 
-    min-height: 100vh;
     background: #333;
+    display: flex;
+}
+
+.left_ilustration {
+    width: 60%;
+    height: 100vh;
+    background: #fff;
+    background: url('../img/dirty-disaster-disposal-2768961.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.login_content {
+    width: 40%;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 40px;
+    background: #fff;
+    color: #333;
+    box-shadow: -4px 0px 5px 0px rgba(0,0,0,0.75);
 }
