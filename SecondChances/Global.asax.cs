@@ -16,11 +16,6 @@ namespace SecondChances
             // Código que se ejecuta al iniciar la aplicación
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //WE ARE THE CODE
-
-            //Otro comentario, aver como se comporta el IDE de Visual Studio
-
-            //Estamos en features dude
         }
     }
 }
