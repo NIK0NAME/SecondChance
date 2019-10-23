@@ -34,3 +34,9 @@ tr:nth-child(even) {
     background-color: #ccc;
     color: #2C3E50;
 }
+
+.main_content {
+    width: 100%; 
+    min-height: 100vh;
+    background: #333;
+}
