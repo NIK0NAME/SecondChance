@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,17 +14,26 @@ namespace SecondChances
 {
     public partial class Signin : System.Web.UI.Page
     {
+        //Conexion com mysql
         private MySqlConnection connection;
         private string server = "localhost";
         private string database = "dam_compartido_dev";
         private string uid = "root";
         private string password = "niko";
 
+        //Conexion con SQL Server
+        SqlConnection con;
+
         String name, username, pass, mail;
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*
+             * Si la pagina recibe el evento POST (normalmente pasa cuando se submitea un fromulario, por defecto todos 
+             * los botonos dentor del form lanzan este evento)
+             */
             if(IsPostBack)
             {
+                //Pequeña validacion, por si al usuario se le ha olvidado introducir algun dato ;)
                 if( data_name.Text == ""
                     || data_user.Text == ""
                     || data_mail.Text == ""
@@ -31,9 +43,61 @@ namespace SecondChances
                     Response.Write("<div class='ma_alert'>Faltan Datos</div>");
                 }else
                 {
-                    //No hay campos vacios
-                    make_connection();
+                    //No hay campos vacios por lo tanto procedemos a insertar los datos en la base de datos
+                    conectSQLServer();
                 }
+            }
+        }
+
+        public void conectSQLServer()
+        {
+            //Creamos la conexion con SQL sever con el conecition string que esta en web.config
+            con = new SqlConnection(ConfigurationManager.ConnectionStrings["mi_conexion"].ConnectionString);
+
+            /*
+             * Utilizamos un try catch para poder gestionar los errores de ejecucion, de esta forma si durante la 
+             * ejecucuin se produce algun error, el programa no se para y lo podemos gestionar nosotros.
+            */
+            try
+            {
+                //Abrimos la conexion
+                con.Open();
+
+                /*
+                 * Creamos el comando, que prepara un procedimento almacenado, le pasamos el nombre del procediminto
+                 * y la conexion con el servidor
+                 * En nuestro caso es un procedimiento que inserta usuarios la base de datos
+                */
+                SqlCommand cmd = new SqlCommand("SecondChance.sp_Insert", con);
+                cmd.CommandType = CommandType.StoredProcedure; //Especificamos que es un porcedimiento almacenado
+
+                /*
+                 * Asignamos los parametros al procedimiento almacenado - nombre, valor
+                 * En el caso del id recibe un 0 ya que se autoincrementa en la base de datos
+                 */
+                cmd.Parameters.AddWithValue("@UserID", 0);
+                cmd.Parameters.AddWithValue("@First_Name", data_name.Text.ToString());
+                cmd.Parameters.AddWithValue("@Email", data_mail.Text.ToString());
+                cmd.Parameters.AddWithValue("@Password", data_pass.Text.ToString());
+                cmd.Parameters.AddWithValue("@Username", data_user.Text.ToString());
+
+                //Ejecutamos el procediminto y obtenemos el resultado de la ejecucion
+                int codereturn = (int)cmd.ExecuteScalar();
+
+                //Gestionamos el resutado obtenido del procediminto
+                if(codereturn == -1)
+                {
+                    Response.Write("<div class='ma_alert'>El usuario ya existe :(</div>");
+                }else
+                {
+                    //Si todo ha ido bien, es decir si la ejecucion llega a este punto, redirigimos al usuario al login
+                    Response.Redirect("~/Login.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
+                //Si ocurre alguna cosa extraña durante la ejecucion lo mostraremos con un alert personalizado
+                Response.Write("<div class='ma_alert'>" + ex + "</div>");
             }
         }
 
@@ -67,6 +131,7 @@ namespace SecondChances
                 Response.Write("<div class='ma_alert'>Datos insertados ;)</div>");
                 connection.Close();
 
+                
                 data_user.Text = "";
                 data_pass.Text = "";
                 data_name.Text = "";

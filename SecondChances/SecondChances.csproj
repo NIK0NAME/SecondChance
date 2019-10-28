@@ -134,6 +134,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Login.aspx" />
+    <Content Include="registro.sql" />
     <Content Include="Signin.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

@@ -51,6 +51,13 @@ tr:nth-child(even) {
     background-size: cover;
 }
 
+.secondOne {
+    background: url('https://images.pexels.com/photos/2447036/pexels-photo-2447036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-position: center;
+    background-size: cover;
+    box-shadow: -4px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
 .login_content {
     width: 40%;
     height: 100vh;
