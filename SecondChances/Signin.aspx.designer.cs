@@ -13,6 +13,15 @@ namespace SecondChances {
     public partial class Signin {
         
         /// <summary>
+        /// Control piter.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl piter;
+        
+        /// <summary>
         /// Control data_name.
         /// </summary>
         /// <remarks>
@@ -56,5 +65,17 @@ namespace SecondChances {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_signin;
+        
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new SecondChances.SiteMaster Master {
+            get {
+                return ((SecondChances.SiteMaster)(base.Master));
+            }
+        }
     }
 }

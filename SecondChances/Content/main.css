@@ -118,7 +118,7 @@ tr:nth-child(even) {
     }
 
 .ma_alert {
-    position: absolute;
+    position: fixed;
     top: 20px;
     width: calc(100% - 20px);
     left: 10px;
@@ -127,4 +127,7 @@ tr:nth-child(even) {
     background: #2C3E50;
     color: #fff;
     font-weight: 900;
+    display: flex;
+    justify-content: space-between;
+
 }

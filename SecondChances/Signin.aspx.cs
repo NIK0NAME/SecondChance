@@ -8,14 +8,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using MySql.Data.MySqlClient;
+//using MySql.Data.MySqlClient;
 
 namespace SecondChances
 {
     public partial class Signin : System.Web.UI.Page
     {
         //Conexion com mysql
-        private MySqlConnection connection;
+        //private MySqlConnection connection;
         private string server = "localhost";
         private string database = "dam_compartido_dev";
         private string uid = "root";
@@ -40,7 +40,7 @@ namespace SecondChances
                     || data_pass.Text == "")
                 {
                     //Datos incompletos jajajajaj
-                    Response.Write("<div class='ma_alert'>Faltan Datos</div>");
+                    Response.Write("<div class='ma_alert'>Faltan Datos<i class='material-icons closable'>close</i></div>");
                 }else
                 {
                     //No hay campos vacios por lo tanto procedemos a insertar los datos en la base de datos
@@ -87,7 +87,8 @@ namespace SecondChances
                 //Gestionamos el resutado obtenido del procediminto
                 if(codereturn == -1)
                 {
-                    Response.Write("<div class='ma_alert'>El usuario ya existe :(</div>");
+                    this.Master.thorwAlertDude("El usuario ya existe DUDE");
+                    //Response.Write("<div class='ma_alert'>El usuario ya existe :(<i class='material-icons closable'>close</i></div>");
                 }else
                 {
                     //Si todo ha ido bien, es decir si la ejecucion llega a este punto, redirigimos al usuario al login
@@ -96,8 +97,9 @@ namespace SecondChances
             }
             catch (Exception ex)
             {
+                this.Master.thorwAlertDude(ex.ToString());
                 //Si ocurre alguna cosa extraña durante la ejecucion lo mostraremos con un alert personalizado
-                Response.Write("<div class='ma_alert'>" + ex + "</div>");
+                //Response.Write("<div class='ma_alert'>" + ex + "<i class='material-icons closable'>close</i></div>");
             }
         }
 
@@ -107,39 +109,40 @@ namespace SecondChances
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-            connection = new MySqlConnection(connectionString);
+            //connection = new MySqlConnection(connectionString);
             //insert into `secondchance.users` (id, username, pass, name, mail)
             //values(0, `username`, `pass`, `name`, `mail`)
 
             try
             {
-                connection.Open();
+                //connection.Open();
                 
                 String query = "insert into `secondchance.users` (id, username, pass, name, mail)" +
                                 "values(0, @username, @pass, @name, @mail)";
 
                 //Creamos el comado con la query y la conexion
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                cmd.Parameters.AddWithValue("@username", data_user.Text);
+                /*cmd.Parameters.AddWithValue("@username", data_user.Text);
                 cmd.Parameters.AddWithValue("@pass", data_pass.Text);
                 cmd.Parameters.AddWithValue("@name", data_name.Text);
                 cmd.Parameters.AddWithValue("@mail", data_mail.Text);
-
+                */
                 //Ejecutamos la query anteriormente preparada
+                /*
                 cmd.ExecuteNonQuery();
                 Response.Write("<div class='ma_alert'>Datos insertados ;)</div>");
                 connection.Close();
-
+                */
                 
                 data_user.Text = "";
                 data_pass.Text = "";
                 data_name.Text = "";
                 data_mail.Text = "";
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
-                Response.Write("<div class='ma_alert'>" + ex + "</div>");
+                Response.Write("<div class='ma_alert'>" + ex + "<i class='material-icons closable'>close</i></div>");
             }
         }
     }
