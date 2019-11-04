@@ -22,8 +22,14 @@
                              <span>Mail: </span><asp:TextBox ID="data_mail" TextMode="Email" runat="server"></asp:TextBox>
                        </div>
                         <div class="button_signin">
-                            <asp:Button ID="btn_signin" runat="server" Text="signin" />
+                            <asp:Button ID="btn_signin" runat="server" Text="Sign in" />
                         </div>
+
+                        <div class="dot_separation">
+                            
+                        </div>
+
+                        <a class="ma-link" href="Login.aspx">¿Ya tienes una cuenta?</a>
                     </div>
                     
                </div>

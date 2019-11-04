@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="main_content">
-            
+            <div id="alert_placer"></div>
             <div class="login_content">
                <div style="width: 320px;">
                     <h1 style="text-align: center;"><img src="https://image.flaticon.com/icons/svg/1727/1727763.svg" width="35"/><br />Log In</h1>
@@ -23,8 +23,15 @@
                              <span>Password: </span><asp:TextBox ID="data_pass" TextMode="Password" runat="server"></asp:TextBox>
                         </div>
                         <div class="button_signin">
-                            <asp:Button ID="btn_signin" runat="server" Text="signin" />
+                            <%--<asp:Button ID="btn_signin" runat="server" Text="Log in" />--%>
+                            <input type="button" id="btn_signin" value="Log in" onclick="validarFormulario()"/>
                         </div>
+
+                        <div class="dot_separation">
+                            
+                        </div>
+
+                        <a class="ma-link" href="Signin.aspx">¿No tienes cuenta?</a>
                     </div>
                     
                </div>
@@ -33,6 +40,22 @@
 
             </div>
         </div>
+        <script>
+            function validarFormulario() {
+                //Obtenemos el formulario
+                var my_form = document.getElementById('form1');
+
+                //Obtenemos los elementos del form
+                let user = document.getElementById('data_user').value;
+                let pass = document.getElementById('data_pass').value;
+                console.log(user + " - " + pass);
+                if (user != "" && pass != "") {
+                    document.getElementById("form1").submit();
+                } else {
+                    document.getElementById('alert_placer').innerHTML += "<div class='ma_alert'>Faltan Datos<i class='material-icons closable'>close</i></div>";
+                }
+            }
+        </script>
     </form>
 </body>
 </html>

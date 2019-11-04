@@ -105,17 +105,17 @@ tr:nth-child(even) {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
-    .button_signin > input {
-        border-radius: 3px;
-        padding: 10px 40px;
-        background: #FE6936;
-        color: #fff;
-        font-weight: 900;
-        border: none;
-    }
+.button_signin > input {
+    border-radius: 3px;
+    padding: 10px 40px;
+    background: #FE6936;
+    color: #fff;
+    font-weight: 900;
+    border: none;
+}
 
 .ma_alert {
     position: fixed;
@@ -129,5 +129,25 @@ tr:nth-child(even) {
     font-weight: 900;
     display: flex;
     justify-content: space-between;
+}
 
+.dot_separation {
+    width: 5px;
+    height: 5px;
+    margin: 20px auto;
+    background: #ccc;
+}
+
+.ma-link {
+    text-decoration: none;
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+}
+
+.main-container {
+    max-width: 1000px;
+    min-width: 320px;
+    width: 100%;
+    min-height: 80vh;
 }

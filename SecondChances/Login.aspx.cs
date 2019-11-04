@@ -11,7 +11,19 @@ namespace SecondChances
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(IsPostBack)
+            {
 
+            }else
+            {
+
+            }
+        }
+
+        public void validarDatos()
+        {
+            String user = data_user.Text;
+            String pass = data_pass.Text;
         }
     }
 }
