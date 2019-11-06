@@ -6,12 +6,13 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="Content/main.css"/>
-    <title></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <title>Login</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="main_content">
-            <div id="alert_placer"></div>
+            <div id="alert_placer" runat="server"></div>
             <div class="login_content">
                <div style="width: 320px;">
                     <h1 style="text-align: center;"><img src="https://image.flaticon.com/icons/svg/1727/1727763.svg" width="35"/><br />Log In</h1>
@@ -40,7 +41,11 @@
 
             </div>
         </div>
+        <script src="Scripts/jquery-3.3.1.js"></script>
+        <script src="Scripts/Functionalities.js"></script>
+        
         <script>
+
             function validarFormulario() {
                 //Obtenemos el formulario
                 var my_form = document.getElementById('form1');

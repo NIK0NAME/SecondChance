@@ -8,14 +8,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-//using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 
 namespace SecondChances
 {
     public partial class Signin : System.Web.UI.Page
     {
         //Conexion com mysql
-        //private MySqlConnection connection;
+        private MySqlConnection connection;
         private string server = "localhost";
         private string database = "dam_compartido_dev";
         private string uid = "root";
@@ -40,7 +40,7 @@ namespace SecondChances
                     || data_pass.Text == "")
                 {
                     //Datos incompletos jajajajaj
-                    Response.Write("<div class='ma_alert'>Faltan Datos<i class='material-icons closable'>close</i></div>");
+                    this.Master.thorwAlertDude("<div class='ma_alert'>Faltan Datos<i class='material-icons closable'>close</i></div>");
                 }else
                 {
                     //No hay campos vacios por lo tanto procedemos a insertar los datos en la base de datos
@@ -115,25 +115,25 @@ namespace SecondChances
 
             try
             {
-                //connection.Open();
+                connection.Open();
                 
                 String query = "insert into `secondchance.users` (id, username, pass, name, mail)" +
                                 "values(0, @username, @pass, @name, @mail)";
 
                 //Creamos el comado con la query y la conexion
-                //MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                /*cmd.Parameters.AddWithValue("@username", data_user.Text);
+                cmd.Parameters.AddWithValue("@username", data_user.Text);
                 cmd.Parameters.AddWithValue("@pass", data_pass.Text);
                 cmd.Parameters.AddWithValue("@name", data_name.Text);
                 cmd.Parameters.AddWithValue("@mail", data_mail.Text);
-                */
+                
                 //Ejecutamos la query anteriormente preparada
-                /*
+                
                 cmd.ExecuteNonQuery();
                 Response.Write("<div class='ma_alert'>Datos insertados ;)</div>");
                 connection.Close();
-                */
+                
                 
                 data_user.Text = "";
                 data_pass.Text = "";
@@ -142,7 +142,7 @@ namespace SecondChances
             }
             catch (Exception ex)
             {
-                Response.Write("<div class='ma_alert'>" + ex + "<i class='material-icons closable'>close</i></div>");
+                this.Master.thorwAlertDude("<div class='ma_alert'>" + ex + "<i class='material-icons closable'>close</i></div>");
             }
         }
     }
