@@ -11,7 +11,14 @@ namespace SecondChances
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["user"] != null)
+            {
 
+            }else
+            {
+                Response.Redirect("Login.aspx");
+            }
+            
         }
     }
 }

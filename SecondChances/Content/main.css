@@ -117,14 +117,19 @@ tr:nth-child(even) {
     border: none;
 }
 
-.ma_alert {
+#alert_placer {
     position: fixed;
-    top: 20px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.ma_alert {
     width: calc(100% - 20px);
-    left: 10px;
     padding: 20px;
     border-radius: 4px;
     background: #2C3E50;
+    margin: 5px auto;
     color: #fff;
     font-weight: 900;
     display: flex;
@@ -150,4 +155,8 @@ tr:nth-child(even) {
     min-width: 320px;
     width: 100%;
     min-height: 80vh;
+}
+
+.closable {
+    cursor: pointer;
 }

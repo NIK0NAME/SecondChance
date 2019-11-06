@@ -33,8 +33,9 @@ namespace SecondChances
              */
             if(IsPostBack)
             {
+                this.Master.cleanAlerts();
                 //Pequeña validacion, por si al usuario se le ha olvidado introducir algun dato ;)
-                if( data_name.Text == ""
+                if ( data_name.Text == ""
                     || data_user.Text == ""
                     || data_mail.Text == ""
                     || data_pass.Text == "")
@@ -44,7 +45,8 @@ namespace SecondChances
                 }else
                 {
                     //No hay campos vacios por lo tanto procedemos a insertar los datos en la base de datos
-                    conectSQLServer();
+                    //conectSQLServer();
+                    make_connection();
                 }
             }
         }
@@ -109,7 +111,7 @@ namespace SecondChances
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
-            //connection = new MySqlConnection(connectionString);
+            connection = new MySqlConnection(connectionString);
             //insert into `secondchance.users` (id, username, pass, name, mail)
             //values(0, `username`, `pass`, `name`, `mail`)
 
@@ -131,7 +133,8 @@ namespace SecondChances
                 //Ejecutamos la query anteriormente preparada
                 
                 cmd.ExecuteNonQuery();
-                Response.Write("<div class='ma_alert'>Datos insertados ;)</div>");
+                //Response.Write("<div class='ma_alert'>Datos insertados ;)</div>");
+                Response.Redirect("Login.aspx");
                 connection.Close();
                 
                 

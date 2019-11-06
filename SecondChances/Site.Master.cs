@@ -17,8 +17,13 @@ namespace SecondChances
         public void thorwAlertDude(String msg)
         {
             String html_elem = "<div class='ma_alert'>" + msg + "<i class='material-icons closable'>close</i></div>";
-            alert_placer.InnerHtml += (html_elem);
+            alert_placer.InnerHtml += html_elem;
             //Response.Write("<div class='ma_alert'>" + msg + "<i class='material-icons closable'>close</i></div>");
+        }
+
+        public void cleanAlerts()
+        {
+            alert_placer.InnerHtml = "";
         }
     }
 }

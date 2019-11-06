@@ -21,6 +21,7 @@ namespace SecondChances
         {
             if(IsPostBack)
             {
+                alert_placer.InnerHtml = "";
                 validarDatos();
             }
             else
@@ -61,6 +62,9 @@ namespace SecondChances
                 if (read.HasRows) {
                     read.Read();
                     alert_placer.InnerHtml += "<div class='ma_alert'>Los datos son correctos " + read.GetString("name") + "<i class='material-icons closable'>close</i></div>";
+
+                    
+                    Session["user"] = read.GetString("username");
                     Response.Redirect("Default.aspx");
                 }
                 else
