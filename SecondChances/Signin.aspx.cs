@@ -40,7 +40,8 @@ namespace SecondChances
                     || data_pass.Text == "")
                 {
                     //Datos incompletos jajajajaj
-                    Response.Write("<div class='ma_alert'>Faltan Datos<i class='material-icons closable'>close</i></div>");
+                    this.Master.thorwAlertDude("Faltan datos colega");
+                    //Response.Write("<div class='ma_alert'>Faltan Datos<i class='material-icons closable'>close</i></div>");
                 }else
                 {
                     //No hay campos vacios por lo tanto procedemos a insertar los datos en la base de datos
@@ -142,7 +143,8 @@ namespace SecondChances
             }
             catch (Exception ex)
             {
-                Response.Write("<div class='ma_alert'>" + ex + "<i class='material-icons closable'>close</i></div>");
+                this.Master.thorwAlertDude(ex.ToString());
+                //Response.Write("<div class='ma_alert'>" + ex + "<i class='material-icons closable'>close</i></div>");
             }
         }
     }

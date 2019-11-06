@@ -6,7 +6,9 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="Content/main.css"/>
-    <title></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <title>Am a Login mot********</title>
+    <script src="Scripts/jquery-3.3.1.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -40,6 +42,7 @@
 
             </div>
         </div>
+        <script src="Scripts/Functionalities.js"></script>
         <script>
             function validarFormulario() {
                 //Obtenemos el formulario
@@ -52,10 +55,13 @@
                 if (user != "" && pass != "") {
                     document.getElementById("form1").submit();
                 } else {
+                    removeAlertos();
                     document.getElementById('alert_placer').innerHTML += "<div class='ma_alert'>Faltan Datos<i class='material-icons closable'>close</i></div>";
                 }
             }
         </script>
+        
+        
     </form>
 </body>
 </html>
