@@ -13,8 +13,9 @@ namespace SecondChances
         {
             if(Session["user"] != null)
             {
-
-            }else
+                whois.InnerText = "Welcome " + (string)Session["user"];
+            }
+            else
             {
                 Response.Redirect("Login.aspx");
             }
