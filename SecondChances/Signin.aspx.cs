@@ -47,8 +47,8 @@ namespace SecondChances
                 }else
                 {
                     //No hay campos vacios por lo tanto procedemos a insertar los datos en la base de datos
-                    conectSQLServer();
-                    //make_connection();
+                    //conectSQLServer();
+                    make_connection();
                 }
             }
         }
@@ -121,8 +121,8 @@ namespace SecondChances
             {
                 connection.Open();
                 
-                String query = "insert into `secondchance.users` (id, username, pass, name, mail)" +
-                                "values(0, @username, @pass, @name, @mail)";
+                String query = "insert into `users` (id, username, pass, name, mail)" +
+                                "values('', @username, @pass, @name, @mail)";
 
                 //Creamos el comado con la query y la conexion
                 MySqlCommand cmd = new MySqlCommand(query, connection);

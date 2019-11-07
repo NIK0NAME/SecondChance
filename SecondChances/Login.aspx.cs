@@ -17,9 +17,9 @@ namespace SecondChances
         //Conexion com mysql
         private MySqlConnection connection;
         private string server = "localhost";
-        private string database = "dam_compartido_dev";
+        private string database = "test";//"dam_compartido_dev";
         private string uid = "root";
-        private string password = "niko";
+        private string password = "usbw";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,7 +48,7 @@ namespace SecondChances
             //Creamos la conexion
             connection = new MySqlConnection(connectionString);
 
-            string query = "SELECT * FROM `secondchance.users` WHERE username = '" + user + "' and pass = '" + pass + "'";
+            string query = "SELECT * FROM `users` WHERE username = '" + user + "' and pass = '" + pass + "'";
 
            
 
@@ -56,7 +56,7 @@ namespace SecondChances
             {
                 //Abrimos la conexion
                 connection.Open();
-
+                //return;
                 //Creamos el comado con la query y la conexion
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
