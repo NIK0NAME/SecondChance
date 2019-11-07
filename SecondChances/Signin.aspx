@@ -2,6 +2,7 @@
 <%@ MasterType VirtualPath="~/Site.Master" %> 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="main_content" runat="server" id="piter">
+            <%--<div id="alert_placer" runat="server"></div>--%>
             <div class="left_ilustration">
 
             </div>

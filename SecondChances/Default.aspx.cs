@@ -11,7 +11,15 @@ namespace SecondChances
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["user"] != null)
+            {
+                whois.InnerText = "Welcome " + (string)Session["user"];
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+            
         }
     }
 }

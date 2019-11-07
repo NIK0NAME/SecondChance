@@ -24,15 +24,15 @@ namespace SecondChances
         protected void Session_Start(object sender, EventArgs e)
         {
             //Funcion que se ejecuta cuando se crea la session
-            Guid defaultUser = Guid.NewGuid();
+            /*Guid defaultUser = Guid.NewGuid();
             Session["Usuario"] = "User - " + defaultUser.ToString();
             Session["Id"] = 0;
-            Session["Autenticacion"] = false;
+            Session["Autenticacion"] = false*/
 
-            Application.Lock();
+            /*Application.Lock();
             //Guardamos el numero de usuarios conectados a la app
             Application["Users_connected"] = int.Parse(Application["Users_connected"].ToString()) + 1;
-            Application.UnLock();
+            Application.UnLock();*/
         }
 
 

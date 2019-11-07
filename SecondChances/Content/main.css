@@ -118,8 +118,9 @@ tr:nth-child(even) {
 }
 
 #alert_placer {
+
+    position: fixed;
     width: 100%;
-    position: absolute;
     top: 0px;
     left: 0px;
 }
@@ -130,6 +131,7 @@ tr:nth-child(even) {
     padding: 20px;
     border-radius: 4px;
     background: #2C3E50;
+    margin: 5px auto;
     color: #fff;
     font-weight: 900;
     display: flex;
