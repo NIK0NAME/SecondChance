@@ -13,13 +13,30 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <%--<webopt:bundlereference runat="server" path="~/Content/css" />--%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="Content/main.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="Content/css/core-style.css">
+    <link rel="stylesheet" href="Content/style.css">
 </head>
 <body>
     <form runat="server">
+
+        <!-- jQuery (Necessary for All JavaScript Plugins) -->
+        <script src="Scripts/js/jquery/jquery-2.2.4.min.js"></script>
+        <!-- Popper js -->
+        <script src="Scripts/js/popper.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="Scripts/js/bootstrap.min.js"></script>
+        <!-- Plugins js -->
+        <script src="Scripts/js/plugins.js"></script>
+        <!-- Classy Nav js -->
+        <script src="Scripts/js/classy-nav.min.js"></script>
+        <!-- Active js -->
+        <script src="Scripts/js/active.js"></script>
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -60,11 +77,13 @@
                 </div>
             </div>
         </div>--%>
+        <div id="mi_header" runat="server"></div>
         <div class="body-content">
             <div ID="alert_placer" runat="server"></div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+        
         <script src="Scripts/Functionalities.js"></script>
     </form>
 </body>
