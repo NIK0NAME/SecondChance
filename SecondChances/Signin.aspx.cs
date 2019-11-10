@@ -17,9 +17,9 @@ namespace SecondChances
         //Conexion com mysql
         private MySqlConnection connection;
         private string server = "localhost";
-        private string database = "dam_compartido_dev";
+        private string database = "secondchance";//"dam_compartido_dev";
         private string uid = "root";
-        private string password = "niko";
+        private string password = "usbw";
 
         //Conexion con SQL Server
         SqlConnection con;
@@ -121,7 +121,7 @@ namespace SecondChances
             {
                 connection.Open();
                 
-                String query = "insert into `users` (id, username, pass, name, mail)" +
+                String query = "insert into `usuarios` (id, username, pass, nombre, mail)" +
                                 "values('', @username, @pass, @name, @mail)";
 
                 //Creamos el comado con la query y la conexion

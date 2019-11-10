@@ -24,6 +24,7 @@
                        </div>
                         <div class="button_signin">
                             <asp:Button ID="btn_signin" runat="server" Text="Sign in" />
+                            <%--<input type="button" id="btn_signin" value="Log in" onclick="validarFormulario()"/>--%>
                         </div>
 
                         <div class="dot_separation">
@@ -36,4 +37,33 @@
                </div>
             </div>
         </div>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+        <script src="Scripts/Functionalities.js"></script>
+        
+        <script>
+
+            function validarFormulario() {
+                //Obtenemos el formulario
+                var my_form = document.getElementById('form1');
+
+                //Obtenemos los elementos del form
+                let user = document.getElementById('data_user').value;
+                let pass = document.getElementById('data_pass').value;
+                console.log(user + " - " + pass);
+                //validamos que se hayan metido datos
+                if (user != "" && pass != "") {
+                    //validamos que los datos no superen la longitud permitida
+                    if (user.lenght > 50 || pass.lenght > 50) {
+                        removeAlertos();
+                    } else {
+                        //mandamos el formulario
+                        document.getElementById("form1").submit();
+                    }
+
+                } else {
+                    removeAlertos();
+                    document.getElementById('alert_placer').innerHTML += "<div class='ma_alert'>Faltan Datos<i class='material-icons closable'>close</i></div>";
+                }
+            }
+        </script>
 </asp:Content>

@@ -18,9 +18,7 @@
     <link rel="stylesheet" href="Content/main.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Core Style CSS -->
-    <link rel="stylesheet" href="Content/css/core-style.css">
-    <link rel="stylesheet" href="Content/style.css">
+    
 </head>
 <body>
     <form runat="server">

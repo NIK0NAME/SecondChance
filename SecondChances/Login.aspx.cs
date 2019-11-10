@@ -17,7 +17,7 @@ namespace SecondChances
         //Conexion com mysql
         private MySqlConnection connection;
         private string server = "localhost";
-        private string database = "test";//"dam_compartido_dev";
+        private string database = "secondchance";//"dam_compartido_dev";
         private string uid = "root";
         private string password = "usbw";
 
@@ -48,7 +48,7 @@ namespace SecondChances
             //Creamos la conexion
             connection = new MySqlConnection(connectionString);
 
-            string query = "SELECT * FROM `users` WHERE username = '" + user + "' and pass = '" + pass + "'";
+            string query = "SELECT * FROM `usuarios` WHERE username = '" + user + "' and pass = '" + pass + "'";
 
            
 
@@ -65,7 +65,7 @@ namespace SecondChances
 
                 if (read.HasRows) {
                     read.Read();
-                    alert_placer.InnerHtml += "<div class='ma_alert'>Los datos son correctos " + read.GetString("name") + "<i class='material-icons closable'>close</i></div>";
+                    alert_placer.InnerHtml += "<div class='ma_alert'>Los datos son correctos " + read.GetString("nombre") + "<i class='material-icons closable'>close</i></div>";
 
                     
                     Session["user"] = read.GetString("username");

@@ -55,8 +55,16 @@
                 let user = document.getElementById('data_user').value;
                 let pass = document.getElementById('data_pass').value;
                 console.log(user + " - " + pass);
+                //validamos que se hayan metido datos
                 if (user != "" && pass != "") {
-                    document.getElementById("form1").submit();
+                    //validamos que los datos no superen la longitud permitida
+                    if (user.lenght > 50 || pass.lenght > 50) {
+                        removeAlertos();
+                    } else {
+                        //mandamos el formulario
+                        document.getElementById("form1").submit();
+                    }
+                    
                 } else {
                     removeAlertos();
                     document.getElementById('alert_placer').innerHTML += "<div class='ma_alert'>Faltan Datos<i class='material-icons closable'>close</i></div>";

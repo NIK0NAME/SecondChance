@@ -12,18 +12,18 @@ namespace SecondChances
     {
         protected void Page_Init(object sender, EventArgs e)
         {
+            
+            //Response.Write("<script language='javascript'>alert('aa');</script>");
+
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
             if (Session["user"] != null)
             {
                 /*string contento = File.ReadAllText("~/header.html");
                 mi_header.InnerHtml = contento;*/
                 Response.WriteFile("header.html");
             }
-            //Response.Write("<script language='javascript'>alert('aa');</script>");
-
-        }
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            
         }
 
         public void thorwAlertDude(String msg)

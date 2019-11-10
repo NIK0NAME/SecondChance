@@ -157,6 +157,7 @@ tr:nth-child(even) {
     min-width: 320px;
     width: 100%;
     min-height: 80vh;
+    margin-top: 85px;
 }
 
 .closable {
