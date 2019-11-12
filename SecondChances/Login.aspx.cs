@@ -69,6 +69,7 @@ namespace SecondChances
 
                     
                     Session["user"] = read.GetString("username");
+                    Session["admin"] = read.IsDBNull(5) ? 0 : read.GetInt32("admin");
                     Response.Redirect("Default.aspx");
                 }
                 else

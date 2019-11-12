@@ -13,13 +13,18 @@ namespace SecondChances
         {
             if(Session["user"] != null)
             {
-                whois.InnerText = "Welcome " + (string)Session["user"];
+                //whois.InnerText = "Welcome " + (string)Session["user"];
             }
             else
             {
                 Response.Redirect("Login.aspx");
             }
             
+        }
+
+        public void cargarProductos()
+        {
+
         }
     }
 }

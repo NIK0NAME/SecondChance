@@ -354,20 +354,23 @@ img {
         .header_area .search-area form button {
           left: 10px;
           height: 40px; } }
-  .header_area .favourite-area a,
-  .header_area .user-login-info a,
-  .header_area .cart-area a {
+.header_area .favourite-area a,
+.header_area .user-login-info a,
+.header_area .cart-area a {
     position: relative;
     z-index: 1;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 90px;
     flex: 0 0 90px;
     width: 90px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     border-left: 1px solid #ebebeb;
     height: 100%;
-    line-height: 80px; }
+    line-height: 80px;
+}
     @media only screen and (max-width: 767px) {
       .header_area .favourite-area a,
       .header_area .user-login-info a,
@@ -381,15 +384,17 @@ img {
     .header_area .user-login-info a img,
     .header_area .cart-area a img {
       max-width: 20px; }
-    .header_area .favourite-area a span,
-    .header_area .user-login-info a span,
-    .header_area .cart-area a span {
-      font-family: "Ubuntu", sans-serif;
-      font-size: 18px;
-      color: #0315ff;
-      font-weight: 700;
-      position: absolute;
-      top: -10px; }
+.header_area .favourite-area a span,
+.header_area .user-login-info a span,
+.header_area .cart-area a span {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    color: #0315ff;
+    font-weight: 700;
+    position: absolute;
+    top: -10px;
+    right: 20px;
+}
       @media only screen and (max-width: 767px) {
         .header_area .favourite-area a span,
         .header_area .user-login-info a span,

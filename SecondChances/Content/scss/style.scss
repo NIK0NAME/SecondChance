@@ -321,10 +321,12 @@ img {
     width: 100%;
     border-bottom: 1px solid $border-color;
     @include trans-duration(500ms);
+
     .classy-nav-container {
         @media #{$breakpoint-xs} {
             @include flex-wrap(wrap);
         }
+
         .classy-navbar-toggler {
             @media #{$breakpoint-xs} {
                 margin-left: auto;
@@ -332,58 +334,71 @@ img {
             }
         }
     }
+
     .classy-navbar,
     .header-meta {
         @include flex(0 0 50%);
         min-width: 50%;
         width: 50%;
+
         @media #{$breakpoint-xs} {
             @include flex(0 0 100%);
             min-width: 100%;
             width: 100%;
         }
     }
+
     .classy-navbar {
         height: 85px;
         padding: 5px 0 5px 5%;
+
         @media #{$breakpoint-xs} {
             height: 40px;
             border-bottom: 1px solid $border-color;
         }
     }
+
     .header-meta {
         height: 85px;
         position: relative;
         z-index: 1;
+
         @media #{$breakpoint-xs} {
             height: 40px;
         }
     }
+
     .classynav ul li a {
         font-size: 16px;
         color: $text-color;
+
         &:hover {
             color: $dark-color;
         }
     }
+
     .classynav ul li .megamenu li a,
     .classynav ul li .dropdown li a {
         font-size: 14px;
         color: $text-color;
+
         &:hover {
             color: $dark-color;
         }
     }
+
     .search-area {
         form {
             position: relative;
             z-index: 1;
             height: 85px;
             border-left: 1px solid $border-color;
+
             @media #{$breakpoint-xs} {
                 height: 40px;
                 border-left: none;
             }
+
             input {
                 border: none;
                 background-color: $white-color;
@@ -394,28 +409,35 @@ img {
                 font-size: 14px;
                 font-weight: 500;
                 @include trans-duration(500ms);
+
                 @media #{$breakpoint-xs} {
                     width: 170px;
                     height: 40px;
                     padding: 0 10px 0 30px;
                 }
+
                 &:focus {
                     outline: none !important;
                     width: 350px;
+
                     @media #{$breakpoint-md} {
                         width: 300px;
                     }
+
                     @media #{$breakpoint-xs} {
                         width: 170px;
                     }
+
                     @media #{$breakpoint-xs-landscape} {
                         width: 270px;
                     }
+
                     @media #{$breakpoint-sm} {
                         width: 300px;
                     }
                 }
             }
+
             button {
                 position: absolute;
                 z-index: 10;
@@ -426,6 +448,7 @@ img {
                 border: none;
                 color: $text-color;
                 font-size: 14px;
+
                 @media #{$breakpoint-xs} {
                     left: 10px;
                     height: 40px;
@@ -433,6 +456,7 @@ img {
             }
         }
     }
+
     .favourite-area,
     .user-login-info,
     .cart-area {
@@ -441,19 +465,24 @@ img {
             z-index: 1;
             @include flex(0 0 90px);
             width: 90px;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             border-left: 1px solid $border-color;
             height: 100%;
             line-height: 80px;
+
             @media #{$breakpoint-xs} {
                 @include flex(0 0 50px);
                 width: 50px;
                 line-height: 40px;
             }
+
             img {
                 max-width: 20px;
             }
+
             span {
                 font-family: $font-ubuntu;
                 font-size: 18px;
@@ -461,12 +490,14 @@ img {
                 font-weight: 700;
                 position: absolute;
                 top: -10px;
+
                 @media #{$breakpoint-xs} {
                     font-size: 14px;
                 }
             }
         }
     }
+
     &.sticky {
         position: fixed;
         z-index: 900;
