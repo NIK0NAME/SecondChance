@@ -29,6 +29,8 @@ namespace SecondChances
             }else
             {
                 loged = 0;
+                mi_header.Visible = false;
+
             }
         }
 

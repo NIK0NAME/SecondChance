@@ -163,3 +163,54 @@ tr:nth-child(even) {
 .closable {
     cursor: pointer;
 }
+
+.sec_products {
+    width: 100%;
+}
+
+.prod_list {
+    padding: 5px;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prd {
+    width: calc(33.3% - 10px);
+    margin: 5px;
+    height: 300px;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .1s ease-in-out;
+    position: relative;
+}
+
+.pr_prize {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 15px;
+    font-weight: 900;
+    color: #FE6936;
+}
+
+.prd:hover {
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+}
+
+.pr_name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-top: 20px;
+}
+
+.prd > img {
+    max-height: 150px;
+}
