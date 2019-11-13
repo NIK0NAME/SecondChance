@@ -220,6 +220,60 @@ tr:nth-child(even) {
     max-width: 1100px;
     margin: 0px auto;
     display: flex;
+    align-items: flex-start;
     min-height: calc(100vh - 85px);
     background: #d7dbdd;
+}
+
+.opt_gestin {
+    width: 20%;
+    min-height: calc(100vh - 85px);
+    border-right: 1px solid #fff;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 85px;
+}
+
+.opt_gestin > input {
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+    background: transparent;
+    width: 100%;
+}
+
+.opt_elem {
+    padding: 10px 20px;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+}
+
+.cont_gestion {
+    width: 80%;
+    min-height: 100vh;
+}
+
+.toolbar_gestion {
+    width: 100%;
+    min-height: 50px;
+    border-bottom: 1px solid #fff;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 85px;
+    background: #f8f9f9;
+    padding: 10px;
+}
+
+.elementos_gestion {
+    width: 100%;
+    padding: 10px;
+}
+
+.elementos_gestion > table td {
+    padding: 10px !important;
+}
+
+.elementos_gestion > table th {
+    padding: 10px !important;
 }
