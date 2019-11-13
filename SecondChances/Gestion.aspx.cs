@@ -48,7 +48,7 @@ namespace SecondChances
 
         protected void gest_usuario_Click(object sender, EventArgs e)
         {
-            estado = "usuario";
+            //estado = "usuario";
             gest_estado.Value = "usuario";
             Page.Title = "Gestion " + gest_estado.Value;
             expositor_gestion.InnerHtml = "<h1>Opcion Gestion Usuario Seleccionada</h1>";
