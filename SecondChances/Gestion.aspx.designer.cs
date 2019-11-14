@@ -121,6 +121,15 @@ namespace SecondChances {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl expositor_gestion;
         
         /// <summary>
+        /// Control selectedElem.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField selectedElem;
+        
+        /// <summary>
         /// Control gest_estado.
         /// </summary>
         /// <remarks>

@@ -96,6 +96,11 @@ namespace SecondChances
             }
         }
 
+        protected void btn_remove_Click(object sender, EventArgs e)
+        {
+            expositor_gestion.InnerHtml = "<h1>Removemos " + sender.ToString() + "</h1>";
+        }
+
         public void add_user()
         {
             String nombre = txt_user_nombre.Text;
@@ -144,6 +149,7 @@ namespace SecondChances
             {
                 tabla += "<th>" + cols[i] + "</th>";
             }
+            tabla += "<th>Actions</th>";
             tabla += "</tr>";
             while(read.Read())
             {
@@ -153,6 +159,8 @@ namespace SecondChances
                     
                     tabla += "<td>" + read.GetValue(i).ToString() +"</td>";
                 }
+                //Opciones de row
+                tabla += "<td><div class='tb_action' onclick='removeMeARow("+read.GetValue(0)+")'>Remove</div></td>";
                 tabla += "</tr>";
             }
             tabla += "</table>";

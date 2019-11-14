@@ -14,3 +14,9 @@ async function removeAlertos() {
     console.log(bloque.length);
 
 }
+
+function removeMeARow(i) {
+    console.log(i);
+    $('#sele_item').val(i);
+    console.log($('#sele_item').val());
+}

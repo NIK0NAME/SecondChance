@@ -27,6 +27,7 @@
             </div>
         </div>
 
+        <asp:HiddenField id="selectedElem" Value="" runat="server"/>
         <asp:HiddenField id="gest_estado" Value="" runat="server"/>
     </div>
 </asp:Content>
