@@ -40,8 +40,22 @@ namespace SecondChances
                 }else
                 {
                     Page.Title = "Gestion " + gest_estado.Value;
+                    gestElem();
                 }
             }
+        }
+
+        public void gestElem()
+        {
+            if(Request.Form["selec_elem"] != null)
+            {
+                int id = Int32.Parse(Request.Form["selec_elem"]);
+                expositor_gestion.InnerHtml = "<h1>Remove " + gest_estado.Value + " " + id + "</h1>";
+            }else
+            {
+                expositor_gestion.InnerHtml = "<h1>REmoving /h1>";
+            }
+            
         }
 
        

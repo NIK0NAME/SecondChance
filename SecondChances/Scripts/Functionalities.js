@@ -17,6 +17,7 @@ async function removeAlertos() {
 
 function removeMeARow(i) {
     console.log(i);
-    $('#sele_item').val(i);
-    console.log($('#sele_item').val());
+    $('#selec_elem').val(i);
+    console.log($('#selec_elem').val());
+    $('form').submit();
 }
